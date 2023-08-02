@@ -1,21 +1,29 @@
-# co3b6475688f177c343f434d6
+# Meme Picker
 
 Quick start:
 
 ```
 $ npm install
 $ npm start
-````
+```
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+### What I learned -
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+for of :
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+.includes() method for checking if an array holds a given value
 
-Happy Coding!
+logical not if (emotionsArr.includes(emotion)) {
+} else {
+emotionsArr.push(emotion);
+turns into if (!emotionsArr.includes(emotion)) {
+emotionsArr.push(emotion);
+} CLEANER CODE
+
+.parentElement - gain access to the element without it having an id
+
+getElementsbyclassname - grab all elements of class with one line of code
+
+html collection
+
+1036

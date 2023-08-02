@@ -1,9 +1,13 @@
 import { catsData } from "./data.js";
 
 const emotionRadio = document.querySelector("#emotion-radios");
+const getImgBtn = document.querySelector("#get-image-btn");
+
+emotionRadio.addEventListener("change", highlightCheckedOption);
+getImgBtn.addEventListener("clicked", getMatchingCatsArray);
 
 // grabs the parent element of emotion and adds styling with classlist
-emotionRadio.addEventListener("change", highlightCheckedOption);
+
 function highlightCheckedOption(event) {
 	const radioArr = document.getElementsByClassName("radio");
 	for (let radio of radioArr) {
@@ -13,6 +17,14 @@ function highlightCheckedOption(event) {
 	document
 		.getElementById(event.target.id)
 		.parentElement.classList.add("highlight");
+}
+
+// grabs the checked emotion input value
+function getMatchingCatsArray() {
+	const selectedEmotion = document.querySelector(
+		"input[type=radio]:checked"
+	).value;
+	console.log(selectedEmotion);
 }
 
 // for of iterates over the value of property assigned to variable

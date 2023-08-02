@@ -19,12 +19,14 @@ function highlightCheckedOption(event) {
 		.parentElement.classList.add("highlight");
 }
 
-// grabs the checked emotion input value
+// checks if emotion has been clicked
 function getMatchingCatsArray() {
-	const selectedEmotion = document.querySelector(
-		"input[type=radio]:checked"
-	).value;
-	console.log(selectedEmotion);
+	if (document.querySelector("input[type=radio]:checked")) {
+		const selectedEmotion = document.querySelector(
+			"input[type=radio]:checked"
+		).value;
+		console.log(selectedEmotion);
+	}
 }
 
 // for of iterates over the value of property assigned to variable

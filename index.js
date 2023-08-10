@@ -34,7 +34,7 @@ function getMatchingCatsArray() {
 				return cat.emotionTags.includes(selectedEmotion);
 			}
 		});
-		console.log(matchingCatsArray);
+		return matchingCatsArray;
 	}
 }
 

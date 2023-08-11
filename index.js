@@ -5,8 +5,10 @@ const getImgBtn = document.getElementById("get-image-btn");
 const animatedGifs = document.getElementById("gifs-only-option");
 const memeModalInner = document.getElementById("meme-modal-inner");
 const memeModal = document.getElementById("meme-modal");
+const modalCloseBtn = document.getElementById("meme-modal-close-btn");
 
 emotionRadio.addEventListener("change", highlightCheckedOption);
+modalCloseBtn.addEventListener("click", closeModal);
 getImgBtn.addEventListener("click", renderCat);
 
 // grabs the parent element of emotion and adds styling with classlist
@@ -19,6 +21,28 @@ function highlightCheckedOption(event) {
 	document
 		.getElementById(event.target.id)
 		.parentElement.classList.add("highlight");
+}
+
+// closes modal
+function closeModal() {
+	memeModal.style.display = "none";
+}
+
+// renders cat images
+function renderCat() {
+	const catObject = getCatObject();
+	memeModalInner.innerHTML = `<img class="cat-img" src="./images/${catObject.image}" alt="${catObject.alt}" /> `;
+	memeModal.style.display = "flex";
+}
+
+function getCatObject() {
+	const catsArray = getMatchingCatsArray();
+	if (catsArray.length === 1) {
+		return catsArray[0];
+	} else {
+		const randomNumber = Math.floor(Math.random() * catsArray.length);
+		return catsArray[randomNumber];
+	}
 }
 
 // checks if emotion has been clicked
@@ -54,20 +78,6 @@ function getEmotionsArray(cats) {
 		}
 	}
 	return emotionsArr;
-}
-function getCatObject() {
-	const catsArray = getMatchingCatsArray();
-	if (catsArray.length === 1) {
-		return catsArray[0];
-	} else {
-		const randomNumber = Math.floor(Math.random() * catsArray.length);
-		return catsArray[randomNumber];
-	}
-}
-function renderCat() {
-	const catObject = getCatObject();
-	memeModalInner.innerHTML = `<img class="cat-img" src="./images/${catObject.image}" alt="${catObject.alt}" /> `;
-	memeModal.style.display = "flex";
 }
 
 // renders results of getEmotionsArray for radio input
